@@ -26,7 +26,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -68,7 +70,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -110,7 +114,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -152,7 +158,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -194,7 +202,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -236,7 +246,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -278,7 +290,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -320,7 +334,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -362,7 +378,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -404,7 +422,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -446,7 +466,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -488,7 +510,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:
@@ -530,7 +554,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: mock-service
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
         volumeMounts:

@@ -10,6 +10,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: d
 ---
@@ -25,6 +26,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-0
 ---
@@ -40,6 +42,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-1
 ---
@@ -55,6 +58,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-2
 ---
@@ -70,6 +74,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-0-0
 ---
@@ -85,6 +90,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-0-1
 ---
@@ -100,6 +106,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-0-2
 ---
@@ -115,6 +122,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-1-0
 ---
@@ -130,6 +138,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-1-1
 ---
@@ -145,6 +154,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-1-2
 ---
@@ -160,6 +170,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-2-0
 ---
@@ -175,6 +186,7 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-2-1
 ---
@@ -190,5 +202,6 @@ spec:
   ports:
   - name: http-web
     port: {{ .Values.service.port }}
+    targetPort: http
   selector:
     name: svc-0-2-2
