@@ -22,7 +22,9 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         name: fortio-client
         ports:
-        - containerPort: {{ .Values.service.port }}
+        - name: http
+          containerPort: 8080
+          protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
     nodeSelector:
