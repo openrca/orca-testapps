@@ -1,0 +1,102 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: service-graph-config
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+data:
+  service-graph: |
+    services:
+    - isEntrypoint: true
+      name: d
+      numRbacPolicies: 0
+      numReplicas: 6
+      script:
+      - - call:
+            service: svc-0-0
+            size: 0B
+        - call:
+            service: svc-0-1
+            size: 0B
+        - call:
+            service: svc-0-2
+            size: 0B
+      type: http
+    - name: svc-0-0
+      numRbacPolicies: 0
+      numReplicas: 6
+      script:
+      - - call:
+            service: svc-0-0-0
+            size: 0B
+        - call:
+            service: svc-0-0-1
+            size: 0B
+        - call:
+            service: svc-0-0-2
+            size: 0B
+      type: http
+    - name: svc-0-1
+      numRbacPolicies: 0
+      numReplicas: 6
+      script:
+      - - call:
+            service: svc-0-1-0
+            size: 0B
+        - call:
+            service: svc-0-1-1
+            size: 0B
+        - call:
+            service: svc-0-1-2
+            size: 0B
+      type: http
+    - name: svc-0-2
+      numRbacPolicies: 0
+      numReplicas: 6
+      script:
+      - - call:
+            service: svc-0-2-0
+            size: 0B
+        - call:
+            service: svc-0-2-1
+            size: 0B
+        - call:
+            service: svc-0-2-2
+            size: 0B
+      type: http
+    - name: svc-0-0-0
+      numRbacPolicies: 0
+      numReplicas: 6
+      type: http
+    - name: svc-0-0-1
+      numRbacPolicies: 0
+      numReplicas: 6
+      type: http
+    - name: svc-0-0-2
+      numRbacPolicies: 0
+      numReplicas: 6
+      type: http
+    - name: svc-0-1-0
+      numRbacPolicies: 0
+      numReplicas: 6
+      type: http
+    - name: svc-0-1-1
+      numRbacPolicies: 0
+      numReplicas: 6
+      type: http
+    - name: svc-0-1-2
+      numRbacPolicies: 0
+      numReplicas: 6
+      type: http
+    - name: svc-0-2-0
+      numRbacPolicies: 0
+      numReplicas: 6
+      type: http
+    - name: svc-0-2-1
+      numRbacPolicies: 0
+      numReplicas: 6
+      type: http
+    - name: svc-0-2-2
+      numRbacPolicies: 0
+      numReplicas: 6
+      type: http

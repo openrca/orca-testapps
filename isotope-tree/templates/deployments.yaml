@@ -1,0 +1,545 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: d
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: d
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: d
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: d
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-0
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-0
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-0
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-0
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-1
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-1
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-1
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-1
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-2
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-2
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-2
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-2
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-0-0
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-0-0
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-0-0
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-0-0
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-0-1
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-0-1
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-0-1
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-0-1
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-0-2
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-0-2
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-0-2
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-0-2
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-1-0
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-1-0
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-1-0
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-1-0
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-1-1
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-1-1
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-1-1
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-1-1
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-1-2
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-1-2
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-1-2
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-1-2
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-2-0
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-2-0
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-2-0
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-2-0
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-2-1
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-2-1
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-2-1
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-2-1
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: svc-0-2-2
+  labels:
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      name: svc-0-2-2
+  template:
+    metadata:
+      annotations:
+        prometheus.io/scrape: "true"
+      labels:
+        name: svc-0-2-2
+        role: service
+    spec:
+      containers:
+      - args:
+        - --max-idle-connections-per-host=64
+        env:
+        - name: SERVICE_NAME
+          value: svc-0-2-2
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        name: mock-service
+        ports:
+        - containerPort: {{ .Values.service.port }}
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        volumeMounts:
+        - mountPath: /etc/config
+          name: config-volume
+      volumes:
+      - configMap:
+          items:
+          - key: service-graph
+            path: service-graph.yaml
+          name: service-graph-config
+        name: config-volume

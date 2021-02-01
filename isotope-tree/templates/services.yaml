@@ -1,0 +1,194 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: d
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: d
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-0
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-1
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-2
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-0-0
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-0-0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-0-1
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-0-1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-0-2
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-0-2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-1-0
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-1-0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-1-1
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-1-1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-1-2
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-1-2
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-2-0
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-2-0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-2-1
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-2-1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-0-2-2
+  labels:
+    app: service-graph
+{{ include "isotope-tree.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+  - name: http-web
+    port: {{ .Values.service.port }}
+  selector:
+    name: svc-0-2-2
