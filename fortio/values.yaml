@@ -1,0 +1,15 @@
+replicaCount: 1
+
+image:
+  repository: tahler/fortio
+  tag: prometheus
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources: {}
+
+nodeSelector:
+  isotope: client-pool
