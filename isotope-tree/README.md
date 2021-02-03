@@ -9,19 +9,19 @@ This test app was generated using [Istio Isotope](https://github.com/istio/tools
 Create namespace:
 
 ```
-$ kubectl create ns isotope-tree
+$ kubectl create ns isotope
 ```
 
 Label namespace for Istio sidecar injection:
 
 ```
-$ kubectl label ns isotope-tree istio-injection=enabled
+$ kubectl label ns isotope istio-injection=enabled
 ```
 
 Deploy chart release:
 
 ```
-$ helm install --name isotope-tree --namespace isotope-tree . --set replicaCount=3
+$ helm install --name isotope-tree --namespace isotope . --set replicaCount=3
 ```
 
 
