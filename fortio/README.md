@@ -5,13 +5,13 @@
 Deploy chart release:
 
 ```
-$ helm install --name fortio --namespace load-gen .
+$ helm install --name fortio --namespace load .
 ```
 
 Port-forward:
 
 ```
-$ kubectl -n load-gen port-forward svc/fortio 8082
+$ kubectl -n load port-forward svc/fortio 8082
 ```
 
 ## Uninstallation
