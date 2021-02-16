@@ -5,7 +5,11 @@
 Deploy chart release:
 
 ```
-$ helm install --name fortio --namespace load .
+$ helm install --name fortio --namespace load . \
+    --set resources.requests.cpu=1000m \
+    --set resources.requests.memory=100Mi \
+    --set resources.limits.cpu=4000m \
+    --set resources.limits.memory=100Mi
 ```
 
 Port-forward:

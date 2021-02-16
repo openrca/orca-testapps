@@ -21,7 +21,12 @@ $ kubectl label ns isotope istio-injection=enabled
 Deploy chart release:
 
 ```
-$ helm install --name isotope-tree --namespace isotope . --set replicaCount=3
+$ helm install --name isotope-tree --namespace isotope . \
+    --set replicaCount=1 \
+    --set resources.requests.cpu=100m \
+    --set resources.requests.memory=100Mi \
+    --set resources.limits.cpu=1000m \
+    --set resources.limits.memory=100Mi
 ```
 
 
