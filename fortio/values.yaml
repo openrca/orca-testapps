@@ -18,4 +18,3 @@ resources:
     memory: 100Mi
 
 nodeSelector:
-  isotope: client-pool
