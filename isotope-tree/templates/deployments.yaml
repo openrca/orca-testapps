@@ -32,7 +32,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -82,7 +84,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -132,7 +136,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -182,7 +188,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -232,7 +240,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -282,7 +292,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -332,7 +344,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -382,7 +396,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -432,7 +448,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -482,7 +500,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -532,7 +552,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -582,7 +604,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume
@@ -632,7 +656,9 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
         volumeMounts:
         - mountPath: /etc/config
           name: config-volume

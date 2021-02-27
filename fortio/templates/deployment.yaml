@@ -26,6 +26,10 @@ spec:
           containerPort: 8080
           protocol: TCP
         resources:
+        {{- if .Values.resources }}
           {{- toYaml .Values.resources | nindent 12 }}
+        {{- end }}
       nodeSelector:
+      {{- if .Values.nodeSelector }}
         {{- toYaml .Values.nodeSelector | nindent 8 }}
+      {{- end }}
