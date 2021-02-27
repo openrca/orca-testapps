@@ -17,4 +17,4 @@ resources:
     cpu: 4000m
     memory: 100Mi
 
-nodeSelector:
+nodeSelector: {}
