@@ -8,10 +8,6 @@ Deploy chart release:
 $ helm install fortio . \
     --namespace load \
     --create-namespace \
-    --set resources.requests.cpu=1000m \
-    --set resources.requests.memory=100Mi \
-    --set resources.limits.cpu=4000m \
-    --set resources.limits.memory=100Mi \
     --set nodeSelector.role=exp-control
 ```
 
