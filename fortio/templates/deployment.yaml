@@ -27,5 +27,5 @@ spec:
           protocol: TCP
         resources:
           {{- toYaml .Values.resources | nindent 12 }}
-    nodeSelector:
-      {{- toYaml . | nindent 8 }}
+      nodeSelector:
+        {{- toYaml .Values.nodeSelector | nindent 8 }}
