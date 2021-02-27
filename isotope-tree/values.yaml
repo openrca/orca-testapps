@@ -11,10 +11,10 @@ service:
 
 resources:
   requests:
-    cpu: 500m
+    cpu: 100m
     memory: 10Mi
   limits  :
-    cpu: 500m
+    cpu: 1000m
     memory: 100Mi
 
 nodeSelector: {}
@@ -22,7 +22,7 @@ nodeSelector: {}
 podAnnotations:
   prometheus.io/scrape: "true"
   sidecar.istio.io/inject: "true"
-  sidecar.istio.io/proxyCPU: "500m"
-  sidecar.istio.io/proxyCPULimit: "500m"
+  sidecar.istio.io/proxyCPU: "100m"
+  sidecar.istio.io/proxyCPULimit: "1000m"
   sidecar.istio.io/proxyMemory: "100Mi"
   sidecar.istio.io/proxyMemoryLimit: "100Mi"
