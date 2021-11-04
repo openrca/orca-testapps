@@ -563,7 +563,7 @@ spec:
         image: gcr.io/google-samples/microservices-demo/loadgenerator:v0.3.0
         env:
         - name: FRONTEND_ADDR
-          value: "frontend:80"
+          value: "istio-ingressgateway.istio-system:80"
         - name: USERS
           value: "10"
         resources:
