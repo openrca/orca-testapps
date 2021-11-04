@@ -21,9 +21,15 @@ spec:
         env:
         - name: PORT
           value: "8080"
-        # - name: DISABLE_TRACING
-        #   value: "1"
+        - name: ENV_PLATFORM
+          value: "local"
+        - name: DISABLE_TRACING
+          value: "1"
         - name: DISABLE_PROFILER
+          value: "1"
+        - name: DISABLE_DEBUGGER
+          value: "1"
+        - name: DISABLE_STATS
           value: "1"
         readinessProbe:
           periodSeconds: 5
@@ -82,6 +88,16 @@ spec:
           env:
           - name: PORT
             value: "5050"
+          - name: ENV_PLATFORM
+            value: "local"
+          - name: DISABLE_TRACING
+            value: "1"
+          - name: DISABLE_PROFILER
+            value: "1"
+          - name: DISABLE_DEBUGGER
+            value: "1"
+          - name: DISABLE_STATS
+            value: "1"
           - name: PRODUCT_CATALOG_SERVICE_ADDR
             value: "productcatalogservice:3550"
           - name: SHIPPING_SERVICE_ADDR
@@ -94,14 +110,6 @@ spec:
             value: "currencyservice:7000"
           - name: CART_SERVICE_ADDR
             value: "cartservice:7070"
-          # - name: DISABLE_STATS
-          #   value: "1"
-          # - name: DISABLE_TRACING
-          #   value: "1"
-          # - name: DISABLE_PROFILER
-          #   value: "1"
-          # - name: JAEGER_SERVICE_ADDR
-          #   value: "jaeger-collector:14268"
           resources:
             requests:
               cpu: 100m
@@ -154,14 +162,18 @@ spec:
         env:
         - name: PORT
           value: "8080"
+        - name: ENV_PLATFORM
+          value: "local"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
+        - name: DISABLE_DEBUGGER
+          value: "1"
+        - name: DISABLE_STATS
+          value: "1"
         - name: PRODUCT_CATALOG_SERVICE_ADDR
           value: "productcatalogservice:3550"
-        # - name: DISABLE_TRACING
-        #   value: "1"
-        # - name: DISABLE_PROFILER
-        #   value: "1"
-        # - name: DISABLE_DEBUGGER
-        #   value: "1"
         resources:
           requests:
             cpu: 100m
@@ -223,6 +235,16 @@ spec:
           env:
           - name: PORT
             value: "8080"
+          - name: ENV_PLATFORM
+            value: "local"
+          - name: DISABLE_TRACING
+            value: "1"
+          - name: DISABLE_PROFILER
+            value: "1"
+          - name: DISABLE_DEBUGGER
+            value: "1"
+          - name: DISABLE_STATS
+            value: "1"
           - name: PRODUCT_CATALOG_SERVICE_ADDR
             value: "productcatalogservice:3550"
           - name: CURRENCY_SERVICE_ADDR
@@ -237,18 +259,6 @@ spec:
             value: "checkoutservice:5050"
           - name: AD_SERVICE_ADDR
             value: "adservice:9555"
-          # # ENV_PLATFORM: One of: local, gcp, aws, azure, onprem, alibaba
-          # # When not set, defaults to "local" unless running in GKE, otherwies auto-sets to gcp
-          # - name: ENV_PLATFORM
-          #   value: "aws"
-          # - name: DISABLE_TRACING
-          #   value: "1"
-          # - name: DISABLE_PROFILER
-          #   value: "1"
-          # - name: JAEGER_SERVICE_ADDR
-          #   value: "jaeger-collector:14268"
-          # - name: CYMBAL_BRANDING
-          #   value: "true"
           resources:
             requests:
               cpu: 100m
@@ -306,6 +316,16 @@ spec:
         env:
         - name: PORT
           value: "50051"
+        - name: ENV_PLATFORM
+          value: "local"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
+        - name: DISABLE_DEBUGGER
+          value: "1"
+        - name: DISABLE_STATS
+          value: "1"
         readinessProbe:
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:50051"]
@@ -356,14 +376,16 @@ spec:
         env:
         - name: PORT
           value: "3550"
-        # - name: DISABLE_STATS
-        #   value: "1"
-        # - name: DISABLE_TRACING
-        #   value: "1"
-        # - name: DISABLE_PROFILER
-        #   value: "1"
-        # - name: JAEGER_SERVICE_ADDR
-        #   value: "jaeger-collector:14268"
+        - name: ENV_PLATFORM
+          value: "local"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
+        - name: DISABLE_DEBUGGER
+          value: "1"
+        - name: DISABLE_STATS
+          value: "1"
         readinessProbe:
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:3550"]
@@ -412,6 +434,16 @@ spec:
         ports:
         - containerPort: 7070
         env:
+        - name: ENV_PLATFORM
+          value: "local"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
+        - name: DISABLE_DEBUGGER
+          value: "1"
+        - name: DISABLE_STATS
+          value: "1"
         - name: REDIS_ADDR
           value: "redis-cart:6379"
         resources:
@@ -477,6 +509,16 @@ spec:
         name: frontend-check
         image: busybox:latest
         env:
+        - name: ENV_PLATFORM
+          value: "local"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
+        - name: DISABLE_DEBUGGER
+          value: "1"
+        - name: DISABLE_STATS
+          value: "1"
         - name: FRONTEND_ADDR
           value: "frontend:80"
       containers:
@@ -519,12 +561,16 @@ spec:
         env:
         - name: PORT
           value: "7000"
-        # - name: DISABLE_TRACING
-        #   value: "1"
-        # - name: DISABLE_PROFILER
-        #   value: "1"
-        # - name: DISABLE_DEBUGGER
-        #   value: "1"
+        - name: ENV_PLATFORM
+          value: "local"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
+        - name: DISABLE_DEBUGGER
+          value: "1"
+        - name: DISABLE_STATS
+          value: "1"
         readinessProbe:
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:7000"]
@@ -574,14 +620,16 @@ spec:
         env:
         - name: PORT
           value: "50051"
-        # - name: DISABLE_STATS
-        #   value: "1"
-        # - name: DISABLE_TRACING
-        #   value: "1"
-        # - name: DISABLE_PROFILER
-        #   value: "1"
-        # - name: JAEGER_SERVICE_ADDR
-        #   value: "jaeger-collector:14268"
+        - name: ENV_PLATFORM
+          value: "local"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
+        - name: DISABLE_DEBUGGER
+          value: "1"
+        - name: DISABLE_STATS
+          value: "1"
         readinessProbe:
           periodSeconds: 5
           exec:
@@ -686,12 +734,16 @@ spec:
         env:
         - name: PORT
           value: "9555"
-        # - name: DISABLE_STATS
-        #   value: "1"
-        # - name: DISABLE_TRACING
-        #   value: "1"
-        # - name: JAEGER_SERVICE_ADDR
-        #   value: "jaeger-collector:14268"
+        - name: ENV_PLATFORM
+          value: "local"
+        - name: DISABLE_TRACING
+          value: "1"
+        - name: DISABLE_PROFILER
+          value: "1"
+        - name: DISABLE_DEBUGGER
+          value: "1"
+        - name: DISABLE_STATS
+          value: "1"
         resources:
           requests:
             cpu: 200m
