@@ -132,9 +132,3 @@ spec:
           memory: "4G"
       expose:
         exposeType: ClusterIP
-      livenessProbe:
-        failureThreshold: 10
-        initialDelaySeconds: 300
-        periodSeconds: 30
-        timeoutSeconds: 30
-        startupDelaySeconds: 7200
