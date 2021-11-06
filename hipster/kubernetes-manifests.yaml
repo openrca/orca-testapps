@@ -47,10 +47,10 @@ spec:
         resources:
           requests:
             cpu: 100m
-            memory: 64Mi
+            memory: 100Mi
           limits:
-            cpu: 200m
-            memory: 128Mi
+            cpu: 1000m
+            memory: 500Mi
 ---
 apiVersion: v1
 kind: Service
@@ -123,10 +123,10 @@ spec:
           resources:
             requests:
               cpu: 100m
-              memory: 64Mi
+              memory: 100Mi
             limits:
-              cpu: 200m
-              memory: 128Mi
+              cpu: 1000m
+              memory: 500Mi
 ---
 apiVersion: v1
 kind: Service
@@ -192,10 +192,10 @@ spec:
         resources:
           requests:
             cpu: 100m
-            memory: 220Mi
+            memory: 100Mi
           limits:
-            cpu: 200m
-            memory: 450Mi
+            cpu: 1000m
+            memory: 500Mi
 ---
 apiVersion: v1
 kind: Service
@@ -282,10 +282,10 @@ spec:
           resources:
             requests:
               cpu: 100m
-              memory: 64Mi
+              memory: 100Mi
             limits:
-              cpu: 200m
-              memory: 128Mi
+              cpu: 1000m
+              memory: 500Mi
 ---
 apiVersion: v1
 kind: Service
@@ -360,10 +360,10 @@ spec:
         resources:
           requests:
             cpu: 100m
-            memory: 64Mi
+            memory: 100Mi
           limits:
-            cpu: 200m
-            memory: 128Mi
+            cpu: 1000m
+            memory: 500Mi
 ---
 apiVersion: v1
 kind: Service
@@ -425,10 +425,10 @@ spec:
         resources:
           requests:
             cpu: 100m
-            memory: 64Mi
+            memory: 100Mi
           limits:
-            cpu: 200m
-            memory: 128Mi
+            cpu: 1000m
+            memory: 500Mi
 ---
 apiVersion: v1
 kind: Service
@@ -484,10 +484,10 @@ spec:
         resources:
           requests:
             cpu: 200m
-            memory: 64Mi
+            memory: 100Mi
           limits:
-            cpu: 300m
-            memory: 128Mi
+            cpu: 1000m
+            memory: 500Mi
         readinessProbe:
           initialDelaySeconds: 15
           exec:
@@ -569,10 +569,10 @@ spec:
         resources:
           requests:
             cpu: 300m
-            memory: 256Mi
+            memory: 100Mi
           limits:
-            cpu: 500m
-            memory: 512Mi
+            cpu: 1000m
+            memory: 500Mi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -622,10 +622,10 @@ spec:
         resources:
           requests:
             cpu: 100m
-            memory: 64Mi
+            memory: 100Mi
           limits:
-            cpu: 200m
-            memory: 128Mi
+            cpu: 1000m
+            memory: 500Mi
 ---
 apiVersion: v1
 kind: Service
@@ -687,10 +687,10 @@ spec:
         resources:
           requests:
             cpu: 100m
-            memory: 64Mi
+            memory: 100Mi
           limits:
-            cpu: 200m
-            memory: 128Mi
+            cpu: 1000m
+            memory: 500Mi
 ---
 apiVersion: v1
 kind: Service
@@ -746,10 +746,10 @@ spec:
         resources:
           requests:
             cpu: 200m
-            memory: 180Mi
+            memory: 100Mi
           limits:
-            cpu: 300m
-            memory: 300Mi
+            cpu: 1000m
+            memory: 500Mi
         readinessProbe:
           initialDelaySeconds: 20
           periodSeconds: 15
