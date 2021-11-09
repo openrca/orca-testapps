@@ -51,7 +51,7 @@ spec:
         engine: inMemory
         inMemory:
           engineConfig:
-            inMemorySizeGB: 3
+            inMemorySizeGB: 6
       systemLog:
         verbosity: 0
         quiet: true
@@ -63,16 +63,16 @@ spec:
       role: exp-subject
     resources:
       limits:
-        cpu: "4000m"
-        memory: "4G"
+        cpu: "8000m"
+        memory: "8G"
       requests:
-        cpu: "4000m"
-        memory: "4G"
+        cpu: "8000m"
+        memory: "8G"
     volumeSpec:
       emptyDir:
         resources:
           requests:
-            storage: 1Gi
+            storage: 10Gi
     livenessProbe:
       failureThreshold: 10
       initialDelaySeconds: 300
@@ -123,11 +123,11 @@ spec:
         role: exp-subject
       resources:
         limits:
-          cpu: "4000m"
-          memory: "4G"
+          cpu: "8000m"
+          memory: "8G"
         requests:
-          cpu: "4000m"
-          memory: "4G"
+          cpu: "8000m"
+          memory: "8G"
       expose:
         exposeType: ClusterIP
 
