@@ -27,7 +27,7 @@ spec:
   crVersion: 1.9.0
   image: percona/percona-server-mongodb:4.4.6-8
   imagePullPolicy: Always
-  allowUnsafeConfigurations: false
+  allowUnsafeConfigurations: true
   updateStrategy: SmartUpdate
   upgradeOptions:
     versionServiceEndpoint: https://check.percona.com
@@ -35,7 +35,10 @@ spec:
     schedule: "0 2 * * *"
     setFCV: false
   secrets:
+    key:
     users: mdb-secrets
+    ssl:
+    sslInternal:
   pmm:
     enabled: false
   replsets:
