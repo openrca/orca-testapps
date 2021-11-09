@@ -132,3 +132,7 @@ spec:
           memory: "4G"
       expose:
         exposeType: ClusterIP
+
+  mongod:
+    security:
+      enableEncryption: false
