@@ -52,6 +52,11 @@ spec:
         inMemory:
           engineConfig:
             inMemorySizeGB: 3
+      systemLog:
+        verbosity: 0
+        quiet: true
+      operationProfiling:
+        mode: off
     affinity:
       antiAffinityTopologyKey: "kubernetes.io/hostname"
     nodeSelector:
@@ -78,6 +83,12 @@ spec:
     enabled: true
     configsvrReplSet:
       size: 3
+      configuration: |-
+        systemLog:
+          verbosity: 0
+          quiet: true
+        operationProfiling:
+          mode: off
       affinity:
         antiAffinityTopologyKey: "kubernetes.io/hostname"
       nodeSelector:
@@ -102,6 +113,12 @@ spec:
         startupDelaySeconds: 7200
     mongos:
       size: 3
+      configuration: |-
+        systemLog:
+          verbosity: 0
+          quiet: true
+        operationProfiling:
+          mode: "off"
       affinity:
         antiAffinityTopologyKey: "kubernetes.io/hostname"
       nodeSelector:
