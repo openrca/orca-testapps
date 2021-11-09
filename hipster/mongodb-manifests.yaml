@@ -74,11 +74,10 @@ spec:
           requests:
             storage: 10Gi
     livenessProbe:
-      failureThreshold: 10
-      initialDelaySeconds: 300
+      failureThreshold: 5
+      initialDelaySeconds: 60
       periodSeconds: 30
-      timeoutSeconds: 30
-      startupDelaySeconds: 7200
+      timeoutSeconds: 20
   sharding:
     enabled: true
     configsvrReplSet:
@@ -106,11 +105,10 @@ spec:
             requests:
               storage: 1Gi
       livenessProbe:
-        failureThreshold: 10
-        initialDelaySeconds: 300
+        failureThreshold: 5
+        initialDelaySeconds: 60
         periodSeconds: 30
-        timeoutSeconds: 30
-        startupDelaySeconds: 7200
+        timeoutSeconds: 20
     mongos:
       size: 3
       configuration: |-
@@ -134,7 +132,15 @@ spec:
   mongod:
     security:
       enableEncryption: false
+    systemLog:
+      verbosity: 0
+      quiet: true
+    operationProfiling:
+      mode: "off"
 
   mongos:
+    systemLog:
+      verbosity: 0
+      quiet: true
     operationProfiling:
       mode: "off"
