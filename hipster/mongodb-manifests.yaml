@@ -117,8 +117,6 @@ spec:
         systemLog:
           verbosity: 0
           quiet: true
-        operationProfiling:
-          mode: "off"
       affinity:
         antiAffinityTopologyKey: "kubernetes.io/hostname"
       nodeSelector:
@@ -136,3 +134,7 @@ spec:
   mongod:
     security:
       enableEncryption: false
+
+  mongos:
+    operationProfiling:
+      mode: "off"
