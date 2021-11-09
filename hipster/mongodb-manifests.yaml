@@ -95,11 +95,11 @@ spec:
         role: exp-subject
       resources:
         limits:
-          cpu: "2000m"
-          memory: "1G"
+          cpu: "4000m"
+          memory: "4G"
         requests:
-          cpu: "2000m"
-          memory: "1G"
+          cpu: "4000m"
+          memory: "4G"
       volumeSpec:
         emptyDir:
           resources:
